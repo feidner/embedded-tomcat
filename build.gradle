@@ -1,0 +1,26 @@
+group 'hfe'
+version '1.0-SNAPSHOT'
+
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    testCompile 'org.testng:testng:6.11'
+
+    testCompile 'org.apache.tomcat.embed:tomcat-embed-core:8.5.13'
+    testCompile ('org.apache.tomcat:tomcat-jasper:8.5.13')
+
+    testCompile 'org.apache.httpcomponents:httpclient:4.5.3'
+    testCompile ('org.seleniumhq.selenium:selenium-java:3.3.1') {
+        exclude module: 'junit'
+    }
+
+}
